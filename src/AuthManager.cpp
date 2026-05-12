@@ -20,7 +20,7 @@ bool AuthManager::signUp()
     int type;
     std::cin >> type;
 
-    _users.emplace(Account(type, login, password));
+    _users.emplace(login, Account(type, login, password));
     std::cout << "User successfully created\n";
     return true;
 }
@@ -34,7 +34,7 @@ Account AuthManager::signIn()
     if (!doesUserExist(login))
     {
         std::cout << "User doesn't exists\n";
-        return;
+        throw("User doesn't exist");
     }
 
     Account user = _users[login];
@@ -46,7 +46,7 @@ Account AuthManager::signIn()
     if (user.getPasswordHash() != Account::hash(password))
     {
         std::cout << "Incorrect password\n";
-        return;
+        throw("Incorrect password");
     }
 
     std::cout << "Signed in as " << login << " " << user.getTypeStr() << "\n";

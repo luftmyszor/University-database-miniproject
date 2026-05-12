@@ -3,7 +3,7 @@
 
 int main()
 {
-    auto CLI = CLIManager();
+    CLIManager CLI = CLIManager();
     while (true)
         CLI.CLI();
 }
