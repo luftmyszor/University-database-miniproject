@@ -1,8 +1,5 @@
-#ifndef STUDENT_H
-#define STUDENT_H
-
-#include <string>
-#include <vector>
+#pragma once
+#include <bits/stdc++.h>
 using namespace std;
 
 class Student {
@@ -10,4 +7,3 @@ class Student {
 
     public:
 };
-#endif

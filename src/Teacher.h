@@ -1,8 +1,5 @@
-#ifndef TEACHER_H
-#define TEACHER_H
-
-#include <string>
-#include <vector>
+#pragma once
+#include <bits/stdc++.h>
 using namespace std;
 
 class Teacher {
@@ -10,4 +7,3 @@ class Teacher {
 
     public:
 };
-#endif
