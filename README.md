@@ -33,5 +33,5 @@ g++ main.cpp -o program
 ## Example Output
 
 ## Authors
-- Tomasz Ciba <br> (Mechatronic Engineering student, Faculty of Mechanical Engineering and Robotics at AGH University in Krakow)
-- Krzysztof Feret <br> (Mechatronic Engineering student, Faculty of Mechanical Engineering and Robotics at AGH University in Krakow)
+- Tomasz Ciba <br> (Mechatronic Engineering student, Faculty of Mechanical Engineering and Robotics at AGH University of Krakow)
+- Krzysztof Feret <br> (Mechatronic Engineering student, Faculty of Mechanical Engineering and Robotics at AGH University of Krakow)
