@@ -1,5 +1,7 @@
 #pragma once
 #include <bits/stdc++.h>
+#include "AuthManager.h"
+#include "Account.h"
 class CLIManager
 {
 private:
@@ -9,8 +11,12 @@ private:
         SIGNUP,
         SIGNIN,
     };
+    int _curentState;
+    Account _currentUser;
 
 public:
-    std::vector<std::string> getVarArgsFromConsole();
-    void CLI(int state);
+    AuthManager auth = AuthManager();
+    CLIManager();
+    void CLI();
+    int getOption();
 };

@@ -1,13 +1,16 @@
 #pragma once
 #include <bits/stdc++.h>
+#include "Account.h"
 
 class AuthManager
 {
 private:
-    static bool isLoggedIn;
     static std::string hashString();
+    static std::unordered_map<std::string, Account> _users;
 
 public:
-    static bool signIn();
-    static bool signUp();
+    Account signIn();
+    bool signUp();
+
+    bool doesUserExist(std::string login);
 };
