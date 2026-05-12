@@ -26,7 +26,7 @@ This project features a modern univeristy database Console Line Application (CLI
 ## Required libraries and packages
 `<bits/stdc++.h>` library
 ## How to run
-Compile with the compiler of choice or directly in terminal, using:
+Compile `main.cpp` with the compiler of choice or directly in terminal, using:
 ```bash
 g++ main.cpp -o program
 ```
