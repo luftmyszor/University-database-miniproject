@@ -16,62 +16,66 @@ const std::string &Student::getLogin() const { return login; }
 
 void Student::addGrade(const Grade &g) { grades.push_back(g); }
 
-double Student::average() const {
-    if (grades.empty()) return 0.0;
+double Student::average() const
+{
+    if (grades.empty())
+        return 0.0;
     double sum = 0.0;
-    for (auto it = grades.begin(); it != grades.end(); ++it) {
+    for (auto it = grades.begin(); it != grades.end(); ++it)
+    {
         sum += it->value;
     }
     return sum / grades.size();
 }
 
-string Student::toString() const {
+string Student::toString() const
+{
     std::ostringstream oss;
-    // login;person;grade1,grade2...
     oss << login << ";" << Person::toString() << ";";
-    for (size_t i = 0; i < grades.size(); ++i) {
-        if (i) oss << ",";
-        oss << grades[i].toString();
+    for (size_t i = 0; i < enrolledCourses.size(); ++i)
+    {
+        if (i)
+            oss << ",";
+        oss << enrolledCourses[i];
     }
     return oss.str();
 }
 
-Student Student::fromString(const std::string &line) {
-    // expected: login;name;surname;day;month;year;pesel;grade1,grade2...
+Student Student::fromString(const std::string &line)
+{
+    // expected: login;name;surname;day;month;year;pesel;course1,course2...
     std::vector<std::string> parts;
     std::istringstream iss(line);
     std::string token;
-    while (std::getline(iss, token, ';')) parts.push_back(token);
+    while (std::getline(iss, token, ';'))
+        parts.push_back(token);
 
     Student s;
-    if (parts.size() < 7) return s;
-    s.login = parts[0];
-    std::string name = parts[1];
-    std::string surname = parts[2];
-    int day = stoi(parts[3]);
-    int month = stoi(parts[4]);
-    int year = stoi(parts[5]);
-    std::string pesel = parts[6];
-    s = Student(s.login, name, surname, day, month, year, pesel);
+    if (parts.size() < 7)
+        return s;
+    s = Student(parts[0], parts[1], parts[2], stoi(parts[3]), stoi(parts[4]), stoi(parts[5]), parts[6]);
 
-    if (parts.size() >= 8 && !parts[7].empty()) {
-        std::istringstream gss(parts[7]);
-        std::string gtoken;
-        while (std::getline(gss, gtoken, ',')) {
-            Grade g = Grade::fromString(gtoken);
-            s.addGrade(g);
+    if (parts.size() >= 8 && !parts[7].empty())
+    {
+        std::istringstream css(parts[7]);
+        std::string ctoken;
+        while (std::getline(css, ctoken, ','))
+        {
+            s.enroll(ctoken);
         }
     }
-
     return s;
 }
 
-void Student::display() const {
+void Student::display() const
+{
     Person::display();
     cout << "Login: " << login << "\n";
     cout << "Grades:\n";
-    if (grades.empty()) cout << "  (no grades)\n";
-    for (auto it = grades.begin(); it != grades.end(); ++it) {
+    if (grades.empty())
+        cout << "  (no grades)\n";
+    for (auto it = grades.begin(); it != grades.end(); ++it)
+    {
         cout << "  " << it->subject << ": " << it->value << " (by " << it->teacherLogin << ")\n";
     }
     cout << "Average: " << average() << "\n";

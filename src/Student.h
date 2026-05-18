@@ -6,10 +6,12 @@
 #include "Grade.h"
 #include <bits/stdc++.h>
 
-class Student : public Person {
+class Student : public Person
+{
 private:
     std::string login;
     std::vector<Grade> grades;
+    std::vector<std::string> enrolledCourses;
 
 public:
     Student();
@@ -23,4 +25,8 @@ public:
     std::string toString() const override;
     static Student fromString(const std::string &line);
     void display() const override;
+
+    const std::vector<Grade> &getGrades() const { return grades; }
+    void enroll(const std::string &courseId) { enrolledCourses.push_back(courseId); }
+    const std::vector<std::string> &getEnrolledCourses() const { return enrolledCourses; }
 };

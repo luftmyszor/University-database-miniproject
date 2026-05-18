@@ -9,6 +9,8 @@
 #include "Student.h"
 #include "Teacher.h"
 #include "DataManager.h"
+#include "Course.h"
+#include "GradesManager.h"
 class CLIManager
 {
 private:
@@ -22,6 +24,7 @@ private:
     Account _currentUser;
     Repository<Student> students;
     Repository<Teacher> teachers;
+    Repository<Course> courses;
     bool _running;
 
 public:
