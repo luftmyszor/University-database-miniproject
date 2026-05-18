@@ -38,3 +38,5 @@ When you start the program you'll see a short greeting and a concise guide. Basi
 ## Example Output
 
 ## Authors
+- Tomasz Ciba, Mechatronic Engineering, AGH University
+- Krzysztof Feret, Mechatronic Engineering, AGH University
