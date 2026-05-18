@@ -18,7 +18,7 @@ This project features a modern univeristy database Console Line Application (CLI
 - Admin features: list and create student/teacher records, save data, sort students by average, view a polymorphic list of people, and list unique subjects.
 - Teacher features: view personal info and assign grades to students.
 - Student features: view personal info and grades; compute average grade.
-- File-based persistence: stores data in `data/accounts.txt`, `data/students.txt`, and `data/teachers.txt` (simple, human-readable formats).
+- File-based persistence: stores data in `data/accounts.txt`, `data/students.txt`, and `data/teachers.txt`.
 - Simple numeric CLI menus with quick-exit support (`0` exits the program from submenus; main menu `3` saves data and quits).
 - Generic `Repository<T>` for in-memory collections with load/save support.
 - Minimal, dependency-free C++17 codebase (build with `g++ -std=c++17`).
