@@ -1,7 +1,5 @@
  # University Database — Project Documentation
 
- > Concise, developer-focused documentation for the University Database CLI project.
-
  ## Table of contents
  - [Overview](#overview)
  - [Quick start](#quick-start)
