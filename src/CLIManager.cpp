@@ -7,17 +7,18 @@ void CLIManager::CLI()
         {
         case START:
             std::cout << "========================================\n";
-            std::cout << "  University Database CLI\n";
+            std::cout << "  Welcome to University Database CLI v1.0\n";
             std::cout << "  Manage students, courses and grades\n";
             std::cout << "  Roles: admin, teacher, student\n";
-            std::cout << "  Usage: enter the option number then press Enter\n";
+            std::cout << "  Short guide: choose the option number then press Enter\n";
+            std::cout << "  Tip: in any submenu you can press 0 to exit the program immediately\n";
             if (auth.doesUserExist("admin")) {
                 std::cout << "  Tip: default admin account exists: login 'admin' / password 'admin'\n";
             }
             std::cout << "========================================\n";
             std::cout << "1) Sign in\n";
             std::cout << "2) Sign up\n";
-            std::cout << "3) Exit\n";
+            std::cout << "3) Exit (save & quit)\n";
             std::cout << "> ";
             switch (getOption())
             {
@@ -104,6 +105,7 @@ bool CLIManager::isRunning() const {
 void CLIManager::adminMenu() {
     while (true) {
         std::cout << "\n--- ADMIN MENU ---\n";
+        std::cout << "0 - Exit program\n";
         std::cout << "1 - List students\n";
         std::cout << "2 - List teachers\n";
         std::cout << "3 - Create student record\n";
@@ -115,6 +117,10 @@ void CLIManager::adminMenu() {
         std::cout << "9 - List unique subjects\n";
         int opt = getOption();
         switch (opt) {
+            case 0:
+                _running = false;
+                return;
+            
             case 1: {
                 auto &all = students.getAll();
                 if (all.empty()) std::cout << "(no students)\n";
@@ -230,6 +236,7 @@ void CLIManager::teacherMenu() {
 
     while (true) {
         std::cout << "\n--- TEACHER MENU ---\n";
+        std::cout << "0 - Exit program\n";
         std::cout << "1 - View my info (no PESEL)\n";
         std::cout << "2 - Assign grade to a student\n";
         std::cout << "3 - Sign out\n";
@@ -255,6 +262,9 @@ void CLIManager::teacherMenu() {
             }
             case 3:
                 return;
+            case 0:
+                _running = false;
+                return;
             default:
                 break;
         }
@@ -271,10 +281,15 @@ void CLIManager::studentMenu() {
     Student &me = *it;
     while (true) {
         std::cout << "\n--- STUDENT MENU ---\n";
+        std::cout << "0 - Exit program\n";
         std::cout << "1 - View my info and grades\n";
         std::cout << "2 - Sign out\n";
         int opt = getOption();
         switch (opt) {
+            case 0:
+                _running = false;
+                return;
+            
             case 1:
                 me.display();
                 break;
