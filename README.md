@@ -33,8 +33,7 @@ Run `program.exe` directly in the terminal, using:
 ```
 
 ## Greeting & Short Guide
-When you start the program you'll see a short greeting and a concise guide. Basic usage:
-
+When you start the program you'll see a short greeting and a concise guide.
 ## Example Output
 
 ## Authors
