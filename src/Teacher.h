@@ -1,13 +1,26 @@
-#ifndef TEACHER_H
-#define TEACHER_H
+#pragma once
+#include "Person.h"
+#include "Student.h"
+#include <bits/stdc++.h>
 
-#include <string>
-#include <vector>
-using namespace std;
+class Teacher : public Person {
+private:
+    std::string login;
+    std::vector<std::string> subjects;
 
-class Teacher {
-    private:
+public:
+    Teacher();
+    Teacher(const std::string &login, const std::string &name, const std::string &surname,
+            int day, int month, int year, const std::string &pesel);
+    ~Teacher();
 
-    public:
+    const std::string &getLogin() const;
+    void addSubject(const std::string &s);
+    const std::vector<std::string> &getSubjects() const;
+
+    void assignGrade(Student &student, const std::string &subject, double value);
+
+    std::string toString() const override;
+    static Teacher fromString(const std::string &line);
+    void display() const override;
 };
-#endif
