@@ -388,6 +388,8 @@ void CLIManager::teacherMenu()
             std::getline(std::cin, subject);
             std::cout << "Grade value: ";
             std::cin >> value;
+            if (value > 5 && value < 2)
+                break;
             me.assignGrade(*sit, subject, value);
             std::cout << "Grade assigned.\n";
             break;
