@@ -28,7 +28,7 @@
 
  ## Overview
 
- A compact command-line application (C++17) to manage a small university-style dataset: students, teachers and grades. It uses file-based persistence and role-based authentication (admin, teacher, student). The code aims to be dependency-free and easy to extend.
+ A compact command-line application to manage a small university-style dataset: students, teachers and grades. It uses file-based persistence and role-based authentication (admin, teacher, student). The project aims to be as object oriented as possible, while maintaining simplicity and clarity.
 
  Key goals:
  - Clear, numeric CLI menus for common tasks.

@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #include "src/CLIManager.h"
+#include "src/AuthManager.h"
 
 int main()
 {
