@@ -26,12 +26,10 @@ This project features a modern univeristy database Console Line Application (CLI
 ## Required libraries and packages
 `<bits/stdc++.h>` library
 ## How to run
-Compile `main.cpp` with the compiler of choice or directly in terminal, using:
+Run `program.exe` directly in the terminal, using:
 ```bash
-g++ main.cpp -o program
+.\program.exe
 ```
 ## Example Output
 
 ## Authors
-- Tomasz Ciba <br> (Mechatronic Engineering student, Faculty of Mechanical Engineering and Robotics at AGH University of Krakow)
-- Krzysztof Feret <br> (Mechatronic Engineering student, Faculty of Mechanical Engineering and Robotics at AGH University of Krakow)

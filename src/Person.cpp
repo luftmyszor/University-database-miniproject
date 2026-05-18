@@ -59,3 +59,34 @@ void Person::inputPESEL() {
         cout << "Invalid PESEL. Please enter exactly 11 digits." << endl;
     }
 }
+
+Person::Person()
+    : name(""), surname(""), dayOfBirth(0), monthOfBirth(0), yearOfBirth(0), peselNumber("")
+{
+}
+
+Person::Person(const string &name, const string &surname, int day, int month, int year, const string &pesel)
+    : name(name), surname(surname), dayOfBirth(day), monthOfBirth(month), yearOfBirth(year), peselNumber(pesel)
+{
+}
+
+Person::~Person() {}
+
+string Person::getName() const { return name; }
+string Person::getSurname() const { return surname; }
+string Person::getPESEL() const { return peselNumber; }
+int Person::getDay() const { return dayOfBirth; }
+int Person::getMonth() const { return monthOfBirth; }
+int Person::getYear() const { return yearOfBirth; }
+
+string Person::toString() const {
+    std::ostringstream oss;
+    oss << name << ";" << surname << ";" << dayOfBirth << ";" << monthOfBirth << ";" << yearOfBirth << ";" << peselNumber;
+    return oss.str();
+}
+
+void Person::display() const {
+    cout << "Name: " << name << " " << surname << "\n";
+    cout << "Date of birth: " << dayOfBirth << "." << monthOfBirth << "." << yearOfBirth << "\n";
+    cout << "PESEL: " << peselNumber << "\n";
+}

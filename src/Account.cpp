@@ -21,11 +21,35 @@ Account::Account(int type, std::string login, std::string password)
     _passwordHash = hash(password);
 }
 
-std::string Account::getLogin() { return _login; }
-std::string Account::getPasswordHash() { return _passwordHash; }
-int Account::getType() { return _type; };
+Account::Account(int type, std::string login, std::string password, bool isHash)
+{
+    switch (type)
+    {
+    case ADMIN:
+        _type = ADMIN;
+        break;
+    case TEACHER:
+        _type = TEACHER;
+        break;
+    case STUDENT:
+        _type = STUDENT;
+        break;
+    default:
+        break;
+    }
 
-std::string Account::getTypeStr()
+    _login = login;
+    if (isHash)
+        _passwordHash = password;
+    else
+        _passwordHash = hash(password);
+}
+
+std::string Account::getLogin() const { return _login; }
+std::string Account::getPasswordHash() const { return _passwordHash; }
+int Account::getType() const { return _type; };
+
+std::string Account::getTypeStr() const
 {
     switch (getType())
     {
@@ -36,6 +60,7 @@ std::string Account::getTypeStr()
     case 2:
         return "STUDENT";
     }
+    return "UNKNOWN";
 }
 
 std::string Account::hash(std::string str)
@@ -52,4 +77,11 @@ std::string Account::hash(std::string str)
     std::stringstream ss;
     ss << std::hex << hash_value;
     return ss.str();
+}
+
+Account::Account()
+{
+    _type = STUDENT;
+    _login = "";
+    _passwordHash = "";
 }

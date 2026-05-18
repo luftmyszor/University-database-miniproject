@@ -4,6 +4,8 @@
 int main()
 {
     CLIManager CLI = CLIManager();
-    while (true)
+    while (CLI.isRunning())
         CLI.CLI();
 }
+
+// CLI - Command Line Interface
