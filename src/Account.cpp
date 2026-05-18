@@ -1,4 +1,6 @@
 #include "Account.h"
+// Account.cpp
+// Purpose: Account implementation including simple password hashing helper.
 
 Account::Account(int type, std::string login, std::string password)
 {

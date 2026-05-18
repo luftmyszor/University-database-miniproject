@@ -1,4 +1,7 @@
 #pragma once
+// CLIManager.h
+// Purpose: declare `CLIManager` which provides the interactive menus and
+// orchestrates authentication, repositories and user workflows (admin/teacher/student).
 #include <bits/stdc++.h>
 #include "AuthManager.h"
 #include "Account.h"

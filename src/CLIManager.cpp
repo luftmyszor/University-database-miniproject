@@ -1,4 +1,7 @@
 #include "CLIManager.h"
+// CLIManager.cpp
+// Purpose: implement the command-line menus and dispatch actions to
+// AuthManager, Repository and domain model methods.
 #include "Utils.h"
 void CLIManager::CLI()
 {

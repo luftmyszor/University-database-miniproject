@@ -1,4 +1,6 @@
 #include "Person.h"
+// Person.cpp
+// Purpose: implementations for Person input/display/serialization helpers.
 
 void Person::inputName() {
     cout << "Enter name: ";

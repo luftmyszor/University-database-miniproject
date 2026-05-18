@@ -1,4 +1,6 @@
 #pragma once
+// Teacher.h
+// Purpose: model for teachers; stores login, subjects and can assign grades.
 #include "Person.h"
 #include "Student.h"
 #include <bits/stdc++.h>

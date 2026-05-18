@@ -1,4 +1,6 @@
 #include "AuthManager.h"
+// AuthManager.cpp
+// Purpose: load/save account data and implement sign-in / sign-up logic.
 
 #include "DataManager.h"
 

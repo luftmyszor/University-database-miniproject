@@ -1,4 +1,6 @@
 #pragma once
+// Account.h
+// Purpose: small model for user accounts (type, login, password hash)
 #include <bits/stdc++.h>
 
 class Account

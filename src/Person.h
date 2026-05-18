@@ -1,4 +1,6 @@
 #pragma once
+// Person.h
+// Purpose: base class for `Student` and `Teacher` storing basic personal data.
 #include <bits/stdc++.h>
 using namespace std;
 

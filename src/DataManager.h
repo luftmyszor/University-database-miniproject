@@ -1,4 +1,6 @@
 #pragma once
+// DataManager.h
+// Purpose: simple helpers to read/write plain text files as vector<string> lines.
 #include <bits/stdc++.h>
 
 class DataManager
