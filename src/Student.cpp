@@ -1,4 +1,6 @@
 #include "Student.h"
+// Student.cpp
+// Purpose: student methods including parsing/serialization and grade handling.
 
 Student::Student() : Person(), login(""), grades() {}
 

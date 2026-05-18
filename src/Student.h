@@ -1,5 +1,7 @@
 
 #pragma once
+// Student.h
+// Purpose: model for students; stores login and grades and provides serialization.
 #include "Person.h"
 #include "Grade.h"
 #include <bits/stdc++.h>

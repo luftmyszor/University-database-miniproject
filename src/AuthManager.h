@@ -1,4 +1,6 @@
 #pragma once
+// AuthManager.h
+// Purpose: manage user accounts in memory and provide sign-in / sign-up APIs.
 #include <bits/stdc++.h>
 #include "Account.h"
 

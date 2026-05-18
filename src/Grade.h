@@ -1,4 +1,6 @@
 #pragma once
+// Grade.h
+// Purpose: small struct representing a grade (subject, value, teacherLogin).
 #include <bits/stdc++.h>
 using namespace std;
 

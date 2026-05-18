@@ -1,4 +1,6 @@
 #include "Teacher.h"
+// Teacher.cpp
+// Purpose: teacher methods including assigning grades and serialization.
 
 Teacher::Teacher() : Person(), login(""), subjects() {}
 

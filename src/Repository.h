@@ -1,4 +1,6 @@
 #pragma once
+// Repository.h
+// Purpose: generic in-memory container with load/save helpers for simple persistence.
 #include <bits/stdc++.h>
 
 template <typename T>

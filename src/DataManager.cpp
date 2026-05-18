@@ -1,4 +1,6 @@
 #include "DataManager.h"
+// DataManager.cpp
+// Purpose: implement simple file read/write helpers used across the project.
 
 void DataManager::saveToFile(const std::string &filename, const std::vector<std::string> &lines)
 {
