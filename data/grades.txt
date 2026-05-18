@@ -1,0 +1,2 @@
+kaziu;ASD;2.000000;teach1
+kaziu;PE;8.000000;teach1
