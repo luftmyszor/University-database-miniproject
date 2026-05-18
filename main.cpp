@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
+#include "src/CLIManager.h"
 
 int main()
 {
-
-    return 0;
+    CLIManager CLI = CLIManager();
+    while (true)
+        CLI.CLI();
 }
