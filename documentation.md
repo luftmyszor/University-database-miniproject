@@ -67,9 +67,11 @@
 
  `data/` contains:
  - `accounts.txt` — user accounts
- - `students.txt` — student records (with grades)
+ - `students.txt` — student records
  - `teachers.txt` — teacher records
- - `grades.txt`, `subjects.txt` — present but currently unused
+ - `grades.txt` — grades records
+ - `subjects.txt` — subjects records
+ - `courses.txt` — courses records
 
  `src/` contains source and header files described in detail below.
 
@@ -114,6 +116,7 @@
  - Member fields:
    - `Repository<Student> students;`
    - `Repository<Teacher> teachers;`
+   - `Repository<Course> courses;`
    - `AuthManager auth` (loads users on construction)
    - `_running` flag to control main loop
  - Main responsibilities:
@@ -233,21 +236,11 @@
 
  ## Notes, limitations & suggestions
 
- - Password hashing: `Account::hash()` is a simple custom rolling hash and **is not secure**. For a production scenario use a secure algorithm (bcrypt/argon2) and proper salting.
+ - Password hashing: `Account::hash()` is a simple custom rolling hash.
  - Error handling: file I/O errors are sometimes caught and ignored; consider logging or surfacing important failures.
  - Concurrency: no file-locking or transactional guarantees — avoid multiple processes writing the same files concurrently.
  - Unused files: `data/grades.txt` and `data/subjects.txt` exist but are unused — remove them or implement functionality that consumes them.
  - Persistence on submenu exits: submenu `0` exit may lead to data loss if changes weren't saved; consider saving on every mutating operation or on any program termination.
-
-
- ## Extending the project
-
- Ideas and pointers:
- - Add a `Course` class and `Repository<Course>`; link students to enrolled courses and teachers to taught courses.
- - Implement a `GradesManager` to write a separate `data/grades.txt` for per-grade storage, or move to a light DB (SQLite) for safer concurrency and queries.
- - Replace `Account::hash()` with a proper password hash library.
- - Add unit tests with GoogleTest and a `tests/` folder.
- - Improve CLI UX: accept command names as well as numbers, add help text, or provide a TUI (ncurses/pdcurses).
 
 
  ## Appendix: example interactions
@@ -281,6 +274,7 @@
  7 - Sign out
  8 - Show all people (polymorphic view)
  9 - List unique subjects
+ 10 - Create a course
  ```
 
 
