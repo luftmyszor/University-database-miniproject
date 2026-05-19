@@ -26,12 +26,12 @@ This project features a modern univeristy database Console Line Application (CLI
 ## Planned Features
 ## Required libraries and packages
 `<bits/stdc++.h>` library
+`#pragma once` support
 ## How to run
 # Windows
-Run `program.exe` directly in the terminal, using:
-```batch
-.\program.exe
-```
+Compile `main.cpp` directly in the terminal, using any compiler and run.
+REMARK: wasn't developed on windows
+
 # Linux
 ```bash
 g++ -std=c++17 main.cpp src/*.cpp -o main && ./main
