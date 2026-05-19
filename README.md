@@ -23,7 +23,7 @@ This project features a modern univeristy database Console Line Application (CLI
 - Generic `Repository<T>` for in-memory collections with load/save support.
 - Minimal, dependency-free C++17 codebase (build with `g++ -std=c++17`).
 
-## Planned Features
+
 ## Required libraries and packages
 `<bits/stdc++.h>` library
 `#pragma once` support
@@ -40,7 +40,7 @@ while in root project folder.
 
 ## Greeting & Short Guide
 When you start the program you'll see a short greeting and a concise guide.
-## Example Output
+
 
 ## Authors
 - Tomasz Ciba, Mechatronic Engineering, AGH University
